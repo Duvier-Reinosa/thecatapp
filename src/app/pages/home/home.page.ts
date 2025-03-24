@@ -52,9 +52,6 @@ export class HomePage implements OnInit {
   private getCats() {
     this.catsService.getCatsService().subscribe((data: any) => {
       let rawData = data;
-      const dataWithoutImage = rawData.filter(
-        (cat: CatModel) => !cat.image?.url,
-      );
 
       const dataSave = rawData.map((cat: CatModel) => {
         if (cat.image?.url) {
