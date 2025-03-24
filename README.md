@@ -16,8 +16,8 @@ Este proyecto es una prueba técnica desarrollada con **Ionic 8** y **Angular 19
 ## 🚀 Instalación y ejecución
 ### 1️⃣ Clonar el repositorio
 ```sh
-git clone https://github.com/tu-usuario/tu-repo.git
-cd tu-repo
+git clone https://github.com/Duvier-Reinosa/thecatapp.git
+cd thecatapp
 ```
 
 ### 2️⃣ Instalar dependencias
