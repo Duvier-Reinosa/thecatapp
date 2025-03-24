@@ -6,8 +6,8 @@
     padding-top: 20px;
 }
 
-.card-catList{
-
+.search-bar{
+  margin-top: 10px;
 }
 
 .card-catList-header{
@@ -19,6 +19,9 @@
 .card-catList-name{
     font-size: 1.3em;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
 }
 
 .card-catList-image-container{
@@ -36,6 +39,18 @@
 
 .card-catList-containerHeader{
   background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.see-more-button{
+  --background: transparent;
+  --color: #ffa2a2;
+  --box-shadow: none;
+  margin-left: 10px;
+}
+
+.card-catList-content{
   display: flex;
   justify-content: space-between;
 }

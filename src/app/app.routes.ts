@@ -11,7 +11,7 @@ export const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'cat',
+    path: 'cat/:id',
     loadComponent: () => import('./pages/cat/cat.page').then( m => m.CatPage)
   },
 ];
