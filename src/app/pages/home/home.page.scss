@@ -1,56 +1,56 @@
-.cat-home-header{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 20px;
+.cat-home-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
 }
 
-.search-bar{
+.search-bar {
   margin-top: 10px;
 }
 
-.card-catList-header{
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
+.card-catList-header {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
 }
 
-.card-catList-name{
-    font-size: 1.3em;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    margin-left: 5px;
+.card-catList-name {
+  font-size: 1.3em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
 }
 
-.card-catList-image-container{
+.card-catList-image-container {
   margin-top: 10px;
   width: 100%;
   height: 200px;
 }
 
-.card-catList-image{
+.card-catList-image {
   height: 100%;
   width: 100%;
   object-fit: cover;
   border-radius: 5px;
 }
 
-.card-catList-containerHeader{
+.card-catList-containerHeader {
   background-color: #fff;
   display: flex;
   justify-content: space-between;
 }
 
-.see-more-button{
+.see-more-button {
   --background: transparent;
   --color: #ffa2a2;
   --box-shadow: none;
   margin-left: 10px;
 }
 
-.card-catList-content{
+.card-catList-content {
   display: flex;
   justify-content: space-between;
 }

@@ -1,7 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonBackButton, IonButtons, IonText } from '@ionic/angular/standalone';
+import {
+  IonContent,
+  IonHeader,
+  IonTitle,
+  IonToolbar,
+  IonBackButton,
+  IonButtons,
+  IonText,
+} from '@ionic/angular/standalone';
 import { CatsService } from 'src/app/services/cats.service';
 import { CatModel } from '../home/cat.model';
 import { LoadingComponent } from '../../components/loading/loading.component';
@@ -12,7 +20,18 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './cat.page.html',
   styleUrls: ['./cat.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonBackButton, IonButtons, LoadingComponent, IonText]
+  imports: [
+    IonContent,
+    IonHeader,
+    IonTitle,
+    IonToolbar,
+    CommonModule,
+    FormsModule,
+    IonBackButton,
+    IonButtons,
+    LoadingComponent,
+    IonText,
+  ],
 })
 export class CatPage implements OnInit {
   public catData: CatModel = {
@@ -36,7 +55,7 @@ export class CatPage implements OnInit {
       id: '',
       width: 0,
       height: 0,
-      url: ''
+      url: '',
     },
     indoor: 0,
     intelligence: 0,
@@ -59,14 +78,17 @@ export class CatPage implements OnInit {
     vocalisation: 0,
     weight: {
       imperial: '',
-      metric: ''
+      metric: '',
     },
-    wikipedia_url: ''
+    wikipedia_url: '',
   };
   public catImage = '';
   public isLoading = 'loading';
 
-  constructor(private catsService: CatsService, private route: ActivatedRoute) {}
+  constructor(
+    private catsService: CatsService,
+    private route: ActivatedRoute,
+  ) {}
 
   ngOnInit() {
     this.getCat();
@@ -74,7 +96,7 @@ export class CatPage implements OnInit {
 
   getCat() {
     const catId = this.route.snapshot.paramMap.get('id');
-    
+
     if (catId === null) {
       this.isLoading = 'error';
       return;
@@ -89,5 +111,4 @@ export class CatPage implements OnInit {
       this.catImage = data[0].url;
     });
   }
-
 }

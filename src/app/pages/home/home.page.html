@@ -1,9 +1,12 @@
 <ion-content [fullscreen]="true">
   <ion-header class="ion-no-border cat-home-header">
     <ion-title class="ion-title">Catbreeds</ion-title>
-    <ion-searchbar class="search-bar" [(ngModel)]="searchTerm" (ionInput)="onSearchChange()">
+    <ion-searchbar
+      class="search-bar"
+      [(ngModel)]="searchTerm"
+      (ionInput)="onSearchChange()"
+    >
     </ion-searchbar>
-
   </ion-header>
 
   <ng-container [ngSwitch]="isLoading" id="container">
@@ -13,12 +16,20 @@
       <ion-card *ngFor="let cat of filteredCats" class="card-catList">
         <ion-card-header class="card-catList-header">
           <div class="card-catList-containerHeader">
-            <ion-card-title class="card-catList-name">{{ cat.name }}</ion-card-title>
-            <ion-button class="see-more-button" [routerLink]="['/cat', cat.id]">Ver más</ion-button>
+            <ion-card-title class="card-catList-name"
+              >{{ cat.name }}</ion-card-title
+            >
+            <ion-button class="see-more-button" [routerLink]="['/cat', cat.id]"
+              >Ver más</ion-button
+            >
           </div>
 
           <div class="card-catList-image-container">
-            <img [src]="cat.image.url || 'https://camarasal.com/wp-content/uploads/2020/08/default-image-5-1.jpg'" alt="{{ cat.name }}" class="card-catList-image" />
+            <img
+              [src]="cat.image.url || 'https://camarasal.com/wp-content/uploads/2020/08/default-image-5-1.jpg'"
+              alt="{{ cat.name }}"
+              class="card-catList-image"
+            />
           </div>
         </ion-card-header>
 

@@ -5,12 +5,10 @@ import { IonSpinner } from '@ionic/angular/standalone';
   selector: 'app-loading',
   templateUrl: './loading.component.html',
   styleUrls: ['./loading.component.scss'],
-  imports: [IonSpinner]
+  imports: [IonSpinner],
 })
-export class LoadingComponent  implements OnInit {
-
-  constructor() { }
+export class LoadingComponent implements OnInit {
+  constructor() {}
 
   ngOnInit() {}
-
 }
