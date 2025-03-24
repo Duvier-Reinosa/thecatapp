@@ -1,0 +1,23 @@
+{
+  "appId": "com.catbreeds.app",
+  "appName": "Cat Breeds",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0,
+      "launchAutoHide": true,
+      "backgroundColor": "#fff",
+      "androidSplashResourceName": "splash",
+      "androidScaleType": "CENTER_CROP",
+      "showSpinner": false,
+      "androidSpinnerStyle": "large",
+      "iosSpinnerStyle": "small",
+      "spinnerColor": "#fff",
+      "splashFullScreen": false,
+      "splashImmersive": false,
+      "layoutName": "CatBreeds",
+      "useDialog": true
+    }
+  }
+}
