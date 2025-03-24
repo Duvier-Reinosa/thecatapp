@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonCardContent, IonCardTitle, IonCardHeader, IonCard} from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonCardContent, IonCardTitle, IonCardHeader, IonCard, IonSearchbar} from '@ionic/angular/standalone';
 import { CommonModule } from '@angular/common';
 import {  CatsService } from '../../services/cats.service';
 import { CatModel } from './cat.model';
@@ -9,7 +9,7 @@ import { LoadingComponent } from '../../components/loading/loading.component';
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [CommonModule, IonHeader, IonToolbar, IonTitle, IonContent, IonCardContent, IonCardTitle, IonCardHeader, IonCard, LoadingComponent],
+  imports: [CommonModule, IonHeader, IonToolbar, IonTitle, IonContent, IonCardContent, IonCardTitle, IonCardHeader, IonCard, LoadingComponent, IonSearchbar],
 })
 export class HomePage {
   public catsList: CatModel[] = [];
