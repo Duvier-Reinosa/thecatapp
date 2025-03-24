@@ -1,14 +1,16 @@
 <ion-content [fullscreen]="true">
   <ion-header class="ion-no-border cat-home-header">
     <ion-title class="ion-title">Catbreeds</ion-title>
-    <ion-searchbar class="search-bar"></ion-searchbar>
+    <ion-searchbar class="search-bar" [(ngModel)]="searchTerm" (ionInput)="onSearchChange()">
+    </ion-searchbar>
+
   </ion-header>
 
   <ng-container [ngSwitch]="isLoading" id="container">
     <app-loading *ngSwitchCase="true"></app-loading>
 
     <div *ngSwitchCase="false">
-      <ion-card *ngFor="let cat of catsList" class="card-catList">
+      <ion-card *ngFor="let cat of filteredCats" class="card-catList">
         <ion-card-header class="card-catList-header">
           <div class="card-catList-containerHeader">
             <ion-card-title class="card-catList-name">{{ cat.name }}</ion-card-title>

@@ -5,16 +5,20 @@ import { CatsService } from '../../services/cats.service';
 import { CatModel } from './cat.model';
 import { LoadingComponent } from '../../components/loading/loading.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [CommonModule, RouterModule, IonHeader, IonButton, IonTitle, IonContent, IonCardContent, IonCardTitle, IonCardHeader, IonCard, LoadingComponent, IonSearchbar],
+  imports: [CommonModule, RouterModule, IonHeader, IonButton, IonTitle, IonContent, IonCardContent, IonCardTitle, IonCardHeader, IonCard, LoadingComponent, IonSearchbar, FormsModule],
 })
 export class HomePage {
   public catsList: CatModel[] = [];
+  public filteredCats: CatModel[] = [];
   public isLoading = true;
+  public searchTerm: string = '';
+
 
   constructor(private catsService: CatsService) {}
 
@@ -28,7 +32,7 @@ export class HomePage {
       const dataWithoutImage = rawData.filter((cat: CatModel) => !cat.image?.url);
 
       
-      this.catsList = rawData.map((cat: CatModel) => {
+      const dataSave = rawData.map((cat: CatModel) => {
         if (cat.image?.url) {
           return cat;
         }
@@ -42,7 +46,29 @@ export class HomePage {
           image
         }
       });
+
+      this.catsList = dataSave;
+      this.filteredCats = dataSave;
+
       this.isLoading = false;
     });
   }
+
+  public onSearchChange() {
+    this.filterCats();
+  }
+  
+
+  private filterCats(){
+    if (this.searchTerm.length === 0) {
+      this.filteredCats = this.catsList;
+      return; 
+    }
+
+    
+    this.filteredCats = this.catsList.filter(cat => 
+      cat.name.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
+  }
+  
 }

@@ -81,7 +81,6 @@ export class CatPage implements OnInit {
     }
 
     this.catsService.getCatService(catId).subscribe((data: any) => {
-      console.log(data);
       this.catData = data;
       this.isLoading = 'loaded';
     });
