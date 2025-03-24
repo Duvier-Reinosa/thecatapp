@@ -26,4 +26,12 @@ export class CatsService {
     });
   }
 
+  public getCatService(breed_id: string) {
+    return this.http.get(`https://api.thecatapi.com/v1/breeds/${breed_id}`, {
+      headers: {
+        'x-api-key': environment.apiKey
+      }
+    });
+  }
+
 }

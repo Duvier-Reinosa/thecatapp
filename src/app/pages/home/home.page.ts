@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonHeader, IonTitle, IonButton, IonContent, IonCardContent, IonCardTitle, IonCardHeader, IonCard, IonSearchbar} from '@ionic/angular/standalone';
 import { CommonModule } from '@angular/common';
-import {  CatsService } from '../../services/cats.service';
+import { CatsService } from '../../services/cats.service';
 import { CatModel } from './cat.model';
 import { LoadingComponent } from '../../components/loading/loading.component';
 import { RouterModule } from '@angular/router';

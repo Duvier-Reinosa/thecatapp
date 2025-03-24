@@ -1,16 +1,61 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>cat</ion-title>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="home"></ion-back-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <ion-header>
     <ion-toolbar>
-      <ion-title size="large">cat</ion-title>
+      <ion-title>{{catData.name}}</ion-title>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="home"></ion-back-button>
+      </ion-buttons>
     </ion-toolbar>
   </ion-header>
+  
+  <ng-container [ngSwitch]="isLoading" id="container">
+    <app-loading *ngSwitchCase="'loading'"></app-loading>
+
+    <div *ngSwitchCase="'loaded'">
+      <div class="cat-image-conatiner">
+        <img [src]="catImage || 'https://camarasal.com/wp-content/uploads/2020/08/default-image-5-1.jpg'" class="cat-img"/>
+      </div>
+
+      <ion-content class="ion-padding cat-content">
+        <p class="cat-text">
+          <b>Descripción:</b> {{catData.description}}
+        </p>
+
+        <p class="cat-text">
+          <b>Origen:</b> {{catData.origin}}
+        </p>
+
+        <p class="cat-text">
+          <b>Inteligencia:</b> {{catData.intelligence}}
+        </p>
+
+        <p class="cat-text">
+          <b>Adaptabilidad:</b> {{catData.adaptability}}
+        </p>
+
+        <p class="cat-text">
+          <b>Tiempo de vida:</b> {{catData.life_span}}
+        </p>
+
+        <p class="cat-text">
+          <b>Nivel de energía:</b> {{catData.energy_level}}
+        </p>
+
+          <!-- <p>País de origen: {{catData.origin}}</p>
+          <p>Inteligencia: {{catData.intelligence}}</p>
+          <p>Temperamento: {{catData.temperament}}</p>
+          <p>Esperanza de vida: {{catData.life_span}}</p>
+          <p>Peso: {{catData.weight.metric}} kg</p>
+          <p>Altura: {{catData.height.metric}} cm</p> -->
+      </ion-content>
+      
+    </div>
+
+    <div *ngSwitchCase="'error'" class="error-container">
+      <ion-text color="danger" class="error-message">
+        hubo un error al cargar la información
+      </ion-text>
+    </div>
+  </ng-container>
 </ion-content>
